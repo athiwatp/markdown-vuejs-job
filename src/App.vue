@@ -1,16 +1,18 @@
 <template>
-  <menu-search></menu-search>
-  <container2side :mark-down-content="markDownContent"></container2side>
+  <div id="app">
+    <menu-search></menu-search>
+    <markdown2side :mark-down-content="markDownContent"></markdown2side>
+</div>
 </template>
 
 <script>
 import MenuSearch from './components/MenuSearch'
-import container2side from './components/container2side'
+import markdown2side from './components/markdown2side'
 
 export default {
   components: {
     MenuSearch: MenuSearch,
-    container2side: container2side
+    markdown2side: markdown2side
   },
   data () {
     return {

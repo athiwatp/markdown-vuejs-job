@@ -4,7 +4,10 @@
   <div class="row">
     <div class="col-md-12">
       <div class="menu">
-        <span> MENU </span>  <input type="text" placeholder="Search"class="input-class">
+        <a v-link="{ path: '/md' }" >Md > </a>
+        <a v-link="{ path: '/job' }" >Job > </a>
+        <a v-link="{ path: '/done' }" >Done </a>
+        <input type="text" placeholder="Search"class="input-class">
       </div>
     </div>
   </div>
@@ -43,7 +46,8 @@ export default {
   outline: none !important;
   text-align: center;
   height: 100%;
-  width: 92%;
+  /*width: 92%;*/
+  width: 85%;
   align-items: baseline;
 }
 
