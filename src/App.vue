@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <menu-search></menu-search>
-    <markdown2side :add-file="addFile" :mark-down-content="markDownContent"></markdown2side>
-    <input type="text" v-model="filename">
-
     <hr> <br> <h1>Search </h1> <input type="search" v-model="text">
     <div v-for="show in list | filterBy text">
       {{ show.filename }}  <button @click="addlist(show.id)">@edit</button>
       <button @click="remove(show.id)">@remove</button>
       <hr> <br>
     </div>
+    <menu-search></menu-search>
+    <markdown2side :add-file="addFile" :mark-down-content="markDownContent"></markdown2side>
+    <input id="input" type="text" v-model="filename">
+
+    <!-- <hr> <br> <h1>Search </h1> <input type="search" v-model="text">
+    <div v-for="show in list | filterBy text">
+      {{ show.filename }}  <button @click="addlist(show.id)">@edit</button>
+      <button @click="remove(show.id)">@remove</button>
+      <hr> <br>
+    </div> -->
 </div>
 </template>
 
@@ -46,16 +52,13 @@ export default {
     addFile (markDownContent) {
       this.file.filename = this.filename
       this.file.data = markDownContent
-      // this.list.push(this.file)
       Users.push(this.file)
-      // console.log(this.list)
       this.file.filename = ''
       this.file.data = ''
     },
     addlist (id) {
       console.log(id)
       let index = this.list.findIndex(item => item.id === id)
-      console.log(index)
       this.markDownContent = this.list[index].data
       this.filename = this.list[index].filename
     },
@@ -64,12 +67,15 @@ export default {
       let user = this.list[index]
       firebase.database().ref('users/' + user.id).remove()
       this.list.splice(index, 1)
-      this.file.filename = ''
-      this.file.data = ''
+      this.filename = ''
+      this.markDownContent = ''
     }
   },
   ready () {
     let vm = this
+    setInterval(() => {
+      console.log(vm.list)
+    }, 1000)
     Users.on('child_added', function (snapshot) {
       var item = snapshot.val()
       item.id = snapshot.key

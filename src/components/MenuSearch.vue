@@ -7,7 +7,7 @@
         <a v-link="{ path: '/md' }" >  </a>
         <a v-link="{ path: '/job' }" >  </a>
         <a v-link="{ path: '/done' }" > </a>
-        <input type="text" placeholder="Search"class="input-class">
+        <!-- <input type="text" placeholder="Search"class="input-class"> -->
       </div>
     </div>
   </div>

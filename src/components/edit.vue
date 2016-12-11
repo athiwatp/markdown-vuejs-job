@@ -1,8 +1,8 @@
 <template lang="html">
   <div id="editor">
-    <textarea v-model="markDownContent" debounce="10"></textarea>
+    <textarea v-model="markDownContent" debounce="10" id="textarea"></textarea>
     <show-markdown :mark-down-content="markDownContent"></show-markdown>
-    <button @click="addFile(markDownContent)"> @Save</button>
+    <button id="save" @click="addFile(markDownContent)"> @Save</button>
   </div>
 </template>
 
