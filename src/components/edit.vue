@@ -2,6 +2,7 @@
   <div id="editor">
     <textarea v-model="markDownContent" debounce="10"></textarea>
     <show-markdown :mark-down-content="markDownContent"></show-markdown>
+    <button @click="addFile(markDownContent)"> @Save</button>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ export default {
   data () {
     return {}
   },
-  props: ['markDownContent'],
+  props: ['markDownContent', 'addFile'],
   components: {
     showMarkdown: showMarkdown
   }

@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12">
-        <edit :mark-down-content="markDownContent"></edit>
+        <edit :mark-down-content="markDownContent" :add-file="addFile"></edit>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@ export default {
   components: {
     edit: edit
   },
-  props: ['markDownContent']
+  props: ['markDownContent', 'addFile']
 }
 </script>
 

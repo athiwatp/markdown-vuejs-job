@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-md-12">
       <div class="menu">
-        <a v-link="{ path: '/md' }" >Md > </a>
-        <a v-link="{ path: '/job' }" >Job > </a>
-        <a v-link="{ path: '/done' }" >Done </a>
+        <a v-link="{ path: '/md' }" >  </a>
+        <a v-link="{ path: '/job' }" >  </a>
+        <a v-link="{ path: '/done' }" > </a>
         <input type="text" placeholder="Search"class="input-class">
       </div>
     </div>
